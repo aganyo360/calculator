@@ -1,0 +1,36 @@
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #800020;
+  color: rgb(255, 254, 254);
+  
+  padding: 20px;
+}
+.box,
+#display {
+  font-size: 24px;
+  padding: 10px;
+} */
+.container {
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+#display {
+  grid-column: span 4;
+  background-color: white;
+  color: black;
+  margin-bottom: 10px;
+  text-align: right;
+  padding: 10px;
+  border-radius: 5px;
+  min-height: 40px;
+}
