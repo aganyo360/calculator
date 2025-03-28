@@ -13,6 +13,9 @@
   background-color:teal;
   
 }
+.orange{
+  background-color: orange;
+}
 #display {
   grid-column: span 4;
   color: white;
