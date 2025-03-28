@@ -1,6 +1,6 @@
 //
 function add(a, b) {
-  return a + b;
+  return +a + +b;
 }
 function subtract(a, b) {
   return a - b;
@@ -9,7 +9,7 @@ function divide(a, b) {
   if (b === 0) return "Error";
   return a / b;
 }
-function multiply(a, b) {
+function multiply(a,  b) {
   return a * b;
 }
 
@@ -34,7 +34,13 @@ function operate(operand,a,b){
 
 let display = document.querySelector('#display');
 let numButtons = document.querySelectorAll('.digit');
+let operators = document.querySelectorAll('[data-op]')
+let evaluator = document.querySelector('#calculate')
 let currentInput=''
+let firstNumber =''
+let secondNumber=''
+let operator =''
+let equals =''
 numButtons.forEach((button) =>{
   
   button.addEventListener('click',()=>{
@@ -43,6 +49,31 @@ numButtons.forEach((button) =>{
     
   })
 })
+
+operators.forEach((btn)=>{
+  btn.addEventListener('click',()=>{
+    firstNumber= currentInput
+    operator = btn.dataset.op
+    currentInput=''
+    display.textContent=''
+
+  })
+})
+
+evaluator.addEventListener('click', ()=>{
+  secondNumber=currentInput;
+  equals = evaluator.textContent
+  let result = operate(operator, Number(firstNumber), Number(secondNumber))
+
+  display.textContent= result
+ 
+})
+
+
+
+
+
+
 document.querySelector('#clear').addEventListener('click', () => {
   currentInput=''
   display.textContent = '';
