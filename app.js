@@ -31,3 +31,19 @@ function operate(operand,a,b){
         return "Invalid operator"
     }
 }
+
+let display = document.querySelector('#display');
+let numButtons = document.querySelectorAll('.digit');
+let currentInput=''
+numButtons.forEach((button) =>{
+  
+  button.addEventListener('click',()=>{
+    currentInput+=button.textContent
+    display.textContent = currentInput;
+    
+  })
+})
+document.querySelector('#clear').addEventListener('click', () => {
+  currentInput=''
+  display.textContent = '';
+});
